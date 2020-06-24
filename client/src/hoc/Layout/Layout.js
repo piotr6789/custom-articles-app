@@ -1,9 +1,18 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+
+import * as languageActions from '../../store/actions/index';
 
 import classes from './Layout.module.css';
 import Navbar from '../../components/Navbar/Navbar';
 
 const Layout = (props) => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(languageActions.checkLanguage());
+  }, [dispatch]);
+
   return (
     <Fragment>
       <Navbar />

@@ -1,1 +1,4 @@
 export const ADD_ARTICLE = 'ADD_ARTICLE';
+
+export const CHANGE_LANGUAGE = 'CHANGE_LANGUAGE';
+export const CHECK_LANGUAGE = 'CHECK_LANGUAGE';

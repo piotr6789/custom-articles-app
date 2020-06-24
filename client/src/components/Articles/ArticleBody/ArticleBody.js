@@ -1,7 +1,7 @@
 import React from 'react';
 
 import useStyles from './ArticleBodyStyles';
-import { Card, CardContent, Button, Typography } from '@material-ui/core';
+import { Card, CardContent, Typography } from '@material-ui/core';
 
 const ArticleBody = (props) => {
   const classes = useStyles();
