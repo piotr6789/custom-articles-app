@@ -5,7 +5,8 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     width: 275,
     textAlign: 'center',
-    margin: 'auto'
+    margin: 'auto',
+    backgroundColor: '#D2D4D4'
   },
   title: {
     fontSize: 20

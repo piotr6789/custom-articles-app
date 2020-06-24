@@ -8,7 +8,7 @@ const Navbar = (props) => {
   const classes = useStyles();
 
   return (
-    <AppBar className={classes.root}>
+    <AppBar className={classes.root} style={{ backgroundColor: '#2B2A31' }}>
       <Toolbar>
         <Navigation />
       </Toolbar>

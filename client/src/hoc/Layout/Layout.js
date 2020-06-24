@@ -14,7 +14,7 @@ const Layout = (props) => {
   }, [dispatch]);
 
   return (
-    <Fragment>
+    <Fragment className={classes.Container}>
       <Navbar />
       <main className={classes.Content}>{props.children}</main>
     </Fragment>

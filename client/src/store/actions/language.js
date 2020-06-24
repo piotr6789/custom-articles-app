@@ -13,6 +13,8 @@ export const checkLanguage = () => {
   const languageId = JSON.parse(localStorage.getItem('language'));
 
   if (!languageId) {
+    localStorage.setItem('language', 0);
+
     return {
       type: actionTypes.CHECK_LANGUAGE,
       language: 0

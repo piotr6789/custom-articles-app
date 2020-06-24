@@ -5,7 +5,8 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center'
   },
   text: {
-    fontSize: 20
+    fontSize: 20,
+    color: '#D2D4D4'
   }
 }));
 
