@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 import useStyles from './NavBtnStyles';
 import { Button } from '@material-ui/core';
@@ -6,7 +7,15 @@ import { Button } from '@material-ui/core';
 const NavigationBtn = (props) => {
   const classes = useStyles();
 
-  return <Button className={classes.root}>{props.children}</Button>;
+  const clickHandler = () => {
+    props.history.push(props.route);
+  };
+
+  return (
+    <Button className={classes.root} onClick={() => clickHandler()}>
+      {props.children}
+    </Button>
+  );
 };
 
-export default NavigationBtn;
+export default withRouter(NavigationBtn);
