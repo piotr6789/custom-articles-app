@@ -1,4 +1,4 @@
 export const MENU_ROUTES = {
-  HOME: '/',
-  ARTICLES: '/articles'
+  ARTICLES: '/articles',
+  ARTICLE_CREATOR: '/create'
 };

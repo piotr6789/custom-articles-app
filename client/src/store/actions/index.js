@@ -1,0 +1,1 @@
+export { addArticle } from './article';
