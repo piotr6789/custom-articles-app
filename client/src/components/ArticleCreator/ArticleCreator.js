@@ -6,6 +6,7 @@ import { Card, CardContent, Button, Typography } from '@material-ui/core';
 
 import * as componentActions from '../../store/actions/index';
 import * as LANGUAGE_HELPER from '../../constants/languageHelper/languageHelper.json';
+import { checkLanguage } from '../../constants/languageHelper/checkLanguageHelper';
 
 const ArticleCreator = (props) => {
   const classes = useStyles();
@@ -18,12 +19,7 @@ const ArticleCreator = (props) => {
     dispatch(componentActions.addArticle(newArticle, props.history));
   };
 
-  let languageHelper = null;
-  if (language === 0) {
-    languageHelper = LANGUAGE_HELPER.ENG;
-  } else {
-    languageHelper = LANGUAGE_HELPER.PL;
-  }
+  let languageHelper = checkLanguage(language, LANGUAGE_HELPER);
 
   return (
     <Card className={classes.root}>

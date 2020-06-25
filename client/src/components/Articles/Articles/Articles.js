@@ -6,18 +6,14 @@ import Grid from '@material-ui/core/Grid';
 import ArticleBody from '../ArticleBody/ArticleBody';
 
 import * as LANGUAGE_HELPER from '../../../constants/languageHelper/languageHelper.json';
+import { checkLanguage } from '../../../constants/languageHelper/checkLanguageHelper';
 
 const Articles = () => {
   const classes = useStyles();
   const articles = useSelector((state) => state.article.articles);
   const language = useSelector((state) => state.language.language);
 
-  let languageHelper = null;
-  if (language === 0) {
-    languageHelper = LANGUAGE_HELPER.ENG;
-  } else {
-    languageHelper = LANGUAGE_HELPER.PL;
-  }
+  let languageHelper = checkLanguage(language, LANGUAGE_HELPER);
 
   let content = articles.length ? (
     <Grid container spacing={4}>

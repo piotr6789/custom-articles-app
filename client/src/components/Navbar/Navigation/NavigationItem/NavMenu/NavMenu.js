@@ -5,6 +5,7 @@ import useStyles from './NavMenuStyles';
 import { Button, Menu, MenuItem, Fade } from '@material-ui/core';
 
 import * as LANGUAGE_HELPER from '../../../../../constants/languageHelper/languageHelper.json';
+import { checkLanguage } from '../../../../../constants/languageHelper/checkLanguageHelper';
 import * as languageActions from '../../../../../store/actions/index';
 
 const NavMenu = (props) => {
@@ -29,12 +30,7 @@ const NavMenu = (props) => {
     setAnchorEl(null);
   };
 
-  let languageHelper = null;
-  if (language === 0) {
-    languageHelper = LANGUAGE_HELPER.ENG;
-  } else {
-    languageHelper = LANGUAGE_HELPER.PL;
-  }
+  let languageHelper = checkLanguage(language, LANGUAGE_HELPER);
 
   return (
     <Fragment>

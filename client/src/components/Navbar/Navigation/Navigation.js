@@ -6,16 +6,12 @@ import NavMenu from './NavigationItem/NavMenu/NavMenu';
 
 import { MENU_ROUTES } from '../../../constants/routes/routes';
 import * as LANGUAGE_HELPER from '../../../constants/languageHelper/languageHelper.json';
+import { checkLanguage } from '../../../constants/languageHelper/checkLanguageHelper';
 
 const Navigation = (props) => {
   const language = useSelector((state) => state.language.language);
 
-  let languageHelper = null;
-  if (language === 0) {
-    languageHelper = LANGUAGE_HELPER.ENG;
-  } else {
-    languageHelper = LANGUAGE_HELPER.PL;
-  }
+  let languageHelper = checkLanguage(language, LANGUAGE_HELPER);
 
   return (
     <Fragment>
