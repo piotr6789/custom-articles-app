@@ -1,0 +1,26 @@
+{
+  "PL": {
+    "ARTICLES": "Artykuły",
+    "NEW_ARTICLE": "Dodaj artykuł",
+    "LANGUAGE": "Język",
+    "POLISH": "Polski",
+    "ENGLISH": "Angielski",
+    "NEW_ARTICLE_TITLE": "Nowy artykuł",
+    "DESCRIPTION": "Opis",
+    "CREATE": "Stwórz",
+    "TITLE": "Nazwa artykułu",
+    "NO_ARTICLE": "Dodaj jakiś artykuł..."
+  },
+  "ENG": {
+    "ARTICLES": "Articles",
+    "NEW_ARTICLE": "Dodaj article",
+    "LANGUAGE": "Language",
+    "POLISH": "Polish",
+    "ENGLISH": "English",
+    "NEW_ARTICLE_TITLE": "New article",
+    "DESCRIPTION": "Description",
+    "CREATE": "Create",
+    "TITLE": "Article name",
+    "NO_ARTICLE": "Add any article..."
+  }
+}

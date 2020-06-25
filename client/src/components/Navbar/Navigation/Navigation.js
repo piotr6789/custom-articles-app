@@ -5,29 +5,25 @@ import NavBtn from './NavigationItem/NavBtn/NavBtn';
 import NavMenu from './NavigationItem/NavMenu/NavMenu';
 
 import { MENU_ROUTES } from '../../../constants/routes/routes';
-import * as LANGUAGE_HELPER from '../../../constants/languageHelper/languageHelper';
+import * as LANGUAGE_HELPER from '../../../constants/languageHelper/languageHelper.json';
 
 const Navigation = (props) => {
   const language = useSelector((state) => state.language.language);
 
-  let languageType = '';
+  let languageHelper = null;
   if (language === 0) {
-    languageType = 'ENG';
+    languageHelper = LANGUAGE_HELPER.ENG;
   } else {
-    languageType = 'PL';
+    languageHelper = LANGUAGE_HELPER.PL;
   }
 
   return (
     <Fragment>
-      <NavBtn route={MENU_ROUTES.ARTICLES}>
-        {LANGUAGE_HELPER.NAVBAR_ITEM_TRANSLATION[languageType].ARTICLES}
-      </NavBtn>
+      <NavBtn route={MENU_ROUTES.ARTICLES}>{languageHelper.ARTICLES}</NavBtn>
       <NavBtn route={MENU_ROUTES.ARTICLE_CREATOR}>
-        {LANGUAGE_HELPER.NAVBAR_ITEM_TRANSLATION[languageType].NEW_ARTICLE}
+        {languageHelper.NEW_ARTICLE}
       </NavBtn>
-      <NavMenu languageType={languageType}>
-        {LANGUAGE_HELPER.NAVBAR_ITEM_TRANSLATION[languageType].LANGUAGE}
-      </NavMenu>
+      <NavMenu>{languageHelper.LANGUAGE}</NavMenu>
     </Fragment>
   );
 };

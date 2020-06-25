@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import useStyles from './NavMenuStyles';
 import { Button, Menu, MenuItem, Fade } from '@material-ui/core';
 
-import * as LANGUAGE_HELPER from '../../../../../constants/languageHelper/languageHelper';
+import * as LANGUAGE_HELPER from '../../../../../constants/languageHelper/languageHelper.json';
 import * as languageActions from '../../../../../store/actions/index';
 
 const NavMenu = (props) => {
@@ -29,11 +29,11 @@ const NavMenu = (props) => {
     setAnchorEl(null);
   };
 
-  let languageType = '';
+  let languageHelper = null;
   if (language === 0) {
-    languageType = 'ENG';
+    languageHelper = LANGUAGE_HELPER.ENG;
   } else {
-    languageType = 'PL';
+    languageHelper = LANGUAGE_HELPER.PL;
   }
 
   return (
@@ -51,13 +51,13 @@ const NavMenu = (props) => {
           onClick={() => clickLanguageHandler(0)}
           selected={!Boolean(language)}
         >
-          {LANGUAGE_HELPER.LANGUAGE_MENU_TRANSLATION[languageType].ENGLISH}
+          {languageHelper.ENGLISH}
         </MenuItem>
         <MenuItem
           onClick={() => clickLanguageHandler(1)}
           selected={Boolean(language)}
         >
-          {LANGUAGE_HELPER.LANGUAGE_MENU_TRANSLATION[languageType].POLISH}
+          {languageHelper.POLISH}
         </MenuItem>
       </Menu>
     </Fragment>

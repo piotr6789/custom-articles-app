@@ -5,7 +5,7 @@ import useStyles from './ArticleCreatorStyles';
 import { Card, CardContent, Button, Typography } from '@material-ui/core';
 
 import * as componentActions from '../../store/actions/index';
-import * as LANGUAGE_HELPER from '../../constants/languageHelper/languageHelper';
+import * as LANGUAGE_HELPER from '../../constants/languageHelper/languageHelper.json';
 
 const ArticleCreator = (props) => {
   const classes = useStyles();
@@ -18,29 +18,22 @@ const ArticleCreator = (props) => {
     dispatch(componentActions.addArticle(newArticle, props.history));
   };
 
-  let languageType = '';
+  let languageHelper = null;
   if (language === 0) {
-    languageType = 'ENG';
+    languageHelper = LANGUAGE_HELPER.ENG;
   } else {
-    languageType = 'PL';
+    languageHelper = LANGUAGE_HELPER.PL;
   }
 
   return (
     <Card className={classes.root}>
       <CardContent>
         <Typography className={classes.title}>
-          {LANGUAGE_HELPER.ARTICLE_CREATOR_TRANSLATION[languageType].TITLE}
+          {languageHelper.TITLE}
         </Typography>
-        <Typography className={classes.content}>
-          {
-            LANGUAGE_HELPER.ARTICLE_CREATOR_TRANSLATION[languageType]
-              .DESCRIPTION
-          }
-        </Typography>
+        <Typography>{languageHelper.DESCRIPTION}</Typography>
       </CardContent>
-      <Button onClick={addArticleHandler}>
-        {LANGUAGE_HELPER.ARTICLE_CREATOR_TRANSLATION[languageType].CREATE}
-      </Button>
+      <Button onClick={addArticleHandler}>{languageHelper.CREATE}</Button>
     </Card>
   );
 };

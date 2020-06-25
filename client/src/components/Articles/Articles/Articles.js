@@ -5,18 +5,18 @@ import useStyles from './ArticlesStyles';
 import Grid from '@material-ui/core/Grid';
 import ArticleBody from '../ArticleBody/ArticleBody';
 
-import * as LANGUAGE_HELPER from '../../../constants/languageHelper/languageHelper';
+import * as LANGUAGE_HELPER from '../../../constants/languageHelper/languageHelper.json';
 
 const Articles = () => {
   const classes = useStyles();
   const articles = useSelector((state) => state.article.articles);
   const language = useSelector((state) => state.language.language);
 
-  let languageType = '';
+  let languageHelper = null;
   if (language === 0) {
-    languageType = 'ENG';
+    languageHelper = LANGUAGE_HELPER.ENG;
   } else {
-    languageType = 'PL';
+    languageHelper = LANGUAGE_HELPER.PL;
   }
 
   let content = articles.length ? (
@@ -24,19 +24,15 @@ const Articles = () => {
       {articles.map((art) => (
         <Grid item xs key={art.id}>
           <ArticleBody
-            title={LANGUAGE_HELPER.ARTICLE_TRANSLATION[languageType].TITLE}
-            content={
-              LANGUAGE_HELPER.ARTICLE_TRANSLATION[languageType].DESCRIPTION
-            }
+            title={languageHelper.TITLE}
+            content={languageHelper.DESCRIPTION}
           />
         </Grid>
       ))}
     </Grid>
   ) : (
     <div className={classes.container}>
-      <h1 className={classes.text}>
-        {LANGUAGE_HELPER.ARTICLE_TRANSLATION[languageType].NO_ARTICLE}
-      </h1>
+      <h1 className={classes.text}>{languageHelper.NO_ARTICLE}</h1>
     </div>
   );
 

@@ -10,7 +10,7 @@ const ArticleBody = (props) => {
     <Card className={classes.root}>
       <CardContent>
         <Typography className={classes.title}>{props.title}</Typography>
-        <Typography className={classes.content}>{props.content}</Typography>
+        <Typography>{props.content}</Typography>
       </CardContent>
     </Card>
   );
